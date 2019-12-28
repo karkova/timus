@@ -1,9 +1,5 @@
-import math
-
-
 def main():
     posled = []
-    summ = 0
     N = int(input())
     for i in range(N):
         posled.append(float(input()))

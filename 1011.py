@@ -1,18 +1,15 @@
-import math
-
-
 def check(p, q):
-    i = 2
-    for i in range(10000):
-        if math.floor(i * (q / 100)) > math.floor(i * (p / 100)):
+    i = 1
+
+    while True:
+        if int(q * i / 100 - 0.000001) - int(p * i / 100 + 0.000001) > 0:
             return i
             break
         i += 1
 
 
 def main():
-    p = float(input())
-    q = float(input())
+    p, q = map(float, input().split())
     print(check(p, q))
 
 
