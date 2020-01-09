@@ -9,25 +9,21 @@ def isPrime(n):
     return d * d > n
 
 
-a = int(input())
+k = int(input())
 b = []
 i = 0
-while i < a:
+while i < k:
     b.append(int(input()))
     i += 1
-i = maximum = 0
-for i in range(0, a):
-    if b[i] > maximum:
-        maximum = b[i]
-lst = [0] * maximum
-num = 0
-i = num
-while lst[maximum-1] == 0:
+last = max(b)
+primes = [0] * last
+i = num = 0
+while primes[last-1] == 0:
     if isPrime(num):
-        lst[i] = num
+        primes[i] = num
         i += 1
     num += 1
-i = 0
-for i in range(0, a):
-    b[i] = lst[b[i]-1]
+
+for i in range(0, k):
+    b[i] = primes[b[i]-1]
     print(b[i])
